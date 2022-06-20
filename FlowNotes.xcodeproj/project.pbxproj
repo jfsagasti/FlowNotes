@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9507FA53287463C5007548C0 /* FCL in Frameworks */ = {isa = PBXBuildFile; productRef = 9507FA52287463C5007548C0 /* FCL */; };
+		95253A732860A40F00E5C7A0 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95253A722860A40F00E5C7A0 /* NoteEditor.swift */; };
+		957063F8285BABE300BEADA8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957063F7285BABE300BEADA8 /* Note.swift */; };
 		95B80809283CF79F00D80481 /* FlowNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B80808283CF79F00D80481 /* FlowNotesApp.swift */; };
-		95B8080B283CF79F00D80481 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8080A283CF79F00D80481 /* ContentView.swift */; };
+		95B8080B283CF79F00D80481 /* MyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8080A283CF79F00D80481 /* MyNotesView.swift */; };
 		95B8080D283CF7A000D80481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B8080C283CF7A000D80481 /* Assets.xcassets */; };
 		95B80810283CF7A000D80481 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B8080F283CF7A000D80481 /* Preview Assets.xcassets */; };
+		95B8081C283D077A00D80481 /* MyNotesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8081B283D077A00D80481 /* MyNotesVM.swift */; };
+		95B80823283D47F400D80481 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B80822283D47F400D80481 /* LoginView.swift */; };
+		95B80825283D487E00D80481 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B80824283D487E00D80481 /* LoginVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95253A722860A40F00E5C7A0 /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
+		95253A762874561B00E5C7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		957063F7285BABE300BEADA8 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		95B80805283CF79F00D80481 /* FlowNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B80808283CF79F00D80481 /* FlowNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowNotesApp.swift; sourceTree = "<group>"; };
-		95B8080A283CF79F00D80481 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95B8080A283CF79F00D80481 /* MyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesView.swift; sourceTree = "<group>"; };
 		95B8080C283CF7A000D80481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95B8080F283CF7A000D80481 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95B8081B283D077A00D80481 /* MyNotesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesVM.swift; sourceTree = "<group>"; };
+		95B80822283D47F400D80481 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		95B80824283D487E00D80481 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +38,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9507FA53287463C5007548C0 /* FCL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95253A7A2874594100E5C7A0 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		957EA2EE283E4FB1008327DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95B807FC283CF79F00D80481 = {
 			isa = PBXGroup;
 			children = (
+				95253A7A2874594100E5C7A0 /* Packages */,
 				95B80807283CF79F00D80481 /* FlowNotes */,
 				95B80806283CF79F00D80481 /* Products */,
+				957EA2EE283E4FB1008327DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +80,14 @@
 		95B80807283CF79F00D80481 /* FlowNotes */ = {
 			isa = PBXGroup;
 			children = (
+				95253A762874561B00E5C7A0 /* Info.plist */,
 				95B80808283CF79F00D80481 /* FlowNotesApp.swift */,
-				95B8080A283CF79F00D80481 /* ContentView.swift */,
+				95B80822283D47F400D80481 /* LoginView.swift */,
+				95B80824283D487E00D80481 /* LoginVM.swift */,
+				95B8080A283CF79F00D80481 /* MyNotesView.swift */,
+				95B8081B283D077A00D80481 /* MyNotesVM.swift */,
+				95253A722860A40F00E5C7A0 /* NoteEditor.swift */,
+				957063F7285BABE300BEADA8 /* Note.swift */,
 				95B8080C283CF7A000D80481 /* Assets.xcassets */,
 				95B8080E283CF7A000D80481 /* Preview Content */,
 			);
@@ -83,6 +118,9 @@
 			dependencies = (
 			);
 			name = FlowNotes;
+			packageProductDependencies = (
+				9507FA52287463C5007548C0 /* FCL */,
+			);
 			productName = FlowNotes;
 			productReference = 95B80805283CF79F00D80481 /* FlowNotes.app */;
 			productType = "com.apple.product-type.application";
@@ -96,6 +134,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
+				ORGANIZATIONNAME = "The Agile Monkeys";
 				TargetAttributes = {
 					95B80804283CF79F00D80481 = {
 						CreatedOnToolsVersion = 13.4;
@@ -111,6 +150,9 @@
 				Base,
 			);
 			mainGroup = 95B807FC283CF79F00D80481;
+			packageReferences = (
+				9507FA51287463C5007548C0 /* XCRemoteSwiftPackageReference "fcl-swift" */,
+			);
 			productRefGroup = 95B80806283CF79F00D80481 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95B8080B283CF79F00D80481 /* ContentView.swift in Sources */,
+				95B80825283D487E00D80481 /* LoginVM.swift in Sources */,
+				95253A732860A40F00E5C7A0 /* NoteEditor.swift in Sources */,
+				95B80823283D47F400D80481 /* LoginView.swift in Sources */,
+				95B8081C283D077A00D80481 /* MyNotesVM.swift in Sources */,
+				95B8080B283CF79F00D80481 /* MyNotesView.swift in Sources */,
+				957063F8285BABE300BEADA8 /* Note.swift in Sources */,
 				95B80809283CF79F00D80481 /* FlowNotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +317,7 @@
 				DEVELOPMENT_TEAM = 67266UR7NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = FlowNotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -280,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "The-Agile-Monkeys.FlowNotes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.theagilemonkeys.FlowNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -299,7 +346,7 @@
 				DEVELOPMENT_TEAM = 67266UR7NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = FlowNotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -309,7 +356,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "The-Agile-Monkeys.FlowNotes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.theagilemonkeys.FlowNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9507FA51287463C5007548C0 /* XCRemoteSwiftPackageReference "fcl-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Outblock/fcl-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9507FA52287463C5007548C0 /* FCL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9507FA51287463C5007548C0 /* XCRemoteSwiftPackageReference "fcl-swift" */;
+			productName = FCL;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95B807FD283CF79F00D80481 /* Project object */;
 }

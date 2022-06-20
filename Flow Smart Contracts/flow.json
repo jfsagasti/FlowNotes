@@ -1,0 +1,22 @@
+{
+	"emulators": {},
+	"contracts": {
+		"NotepadManagerV1": "NotepadManagerV1.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"my-testnet-account": {
+			"address": "9bde7238c9c39e97",
+			"key": "DON'T COMMIT YOUR PRIVATE KEY"
+		}
+	},
+	"deployments": {
+		"testnet": {
+			"my-testnet-account": ["NotepadManagerV1"]
+		}
+	}
+}
