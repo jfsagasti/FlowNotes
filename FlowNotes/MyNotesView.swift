@@ -74,11 +74,13 @@ struct MyNotesView: View {
                         List {
                             ForEach(notes, id: \.id) { note in
                                 NoteRow(note: note)
+                                    .listRowBackground(Color.black)
                             }
                             .onDelete { index in
                                 vm.deleteNote(atIndex: index.first)
                             }
                         }
+                        .background(.red)
                     
                     } else if vm.state == .loading {
                         EmptyView()
@@ -91,6 +93,7 @@ struct MyNotesView: View {
                 .navigationBarItems(leading: moreOptionsButton, trailing: addNoteButton)
                 .navigationTitle("Flow Notes")
             }
+            .tint(UI.flowGreen)
             
             ZStack {
                 Color.black
@@ -120,7 +123,7 @@ struct MyNotesView: View {
         .sheet(isPresented: $isShowingNoteEditor) {
             isShowingNoteEditor = false
         } content: {
-            NoteEditor().environmentObject(vm)
+            NoteEditorView().environmentObject(vm)
         }
     }
 }
@@ -132,17 +135,18 @@ struct NoteRow: View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
                 Text(note.title)
-                    .font(.body)
-                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .font(.body.weight(.bold))
                 
                 Text(note.body)
+                    .foregroundColor(.black)
                     .font(.caption)
             }
             
             Spacer()
         }
         .padding()
-        .background(Color.yellow.opacity(0.5))
+        .background(UI.flowGreen)
         .cornerRadius(10)
     }
 }
@@ -157,7 +161,7 @@ private struct PreviewWrapper: View {
     }
     
     var body: some View {
-        MyNotesView(vm: vm)
+        MyNotesView(vm: vm).preferredColorScheme(.dark)
     }
 }
 

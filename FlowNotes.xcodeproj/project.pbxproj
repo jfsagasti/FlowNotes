@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9507FA53287463C5007548C0 /* FCL in Frameworks */ = {isa = PBXBuildFile; productRef = 9507FA52287463C5007548C0 /* FCL */; };
-		95253A732860A40F00E5C7A0 /* NoteEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95253A722860A40F00E5C7A0 /* NoteEditor.swift */; };
+		95253A732860A40F00E5C7A0 /* NoteEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95253A722860A40F00E5C7A0 /* NoteEditorView.swift */; };
 		957063F8285BABE300BEADA8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957063F7285BABE300BEADA8 /* Note.swift */; };
 		95B80809283CF79F00D80481 /* FlowNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B80808283CF79F00D80481 /* FlowNotesApp.swift */; };
 		95B8080B283CF79F00D80481 /* MyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B8080A283CF79F00D80481 /* MyNotesView.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		95253A722860A40F00E5C7A0 /* NoteEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditor.swift; sourceTree = "<group>"; };
+		95253A722860A40F00E5C7A0 /* NoteEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorView.swift; sourceTree = "<group>"; };
 		95253A762874561B00E5C7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		957063F7285BABE300BEADA8 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		95B80805283CF79F00D80481 /* FlowNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,13 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95253A7A2874594100E5C7A0 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		957EA2EE283E4FB1008327DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +55,6 @@
 		95B807FC283CF79F00D80481 = {
 			isa = PBXGroup;
 			children = (
-				95253A7A2874594100E5C7A0 /* Packages */,
 				95B80807283CF79F00D80481 /* FlowNotes */,
 				95B80806283CF79F00D80481 /* Products */,
 				957EA2EE283E4FB1008327DC /* Frameworks */,
@@ -86,7 +78,7 @@
 				95B80824283D487E00D80481 /* LoginVM.swift */,
 				95B8080A283CF79F00D80481 /* MyNotesView.swift */,
 				95B8081B283D077A00D80481 /* MyNotesVM.swift */,
-				95253A722860A40F00E5C7A0 /* NoteEditor.swift */,
+				95253A722860A40F00E5C7A0 /* NoteEditorView.swift */,
 				957063F7285BABE300BEADA8 /* Note.swift */,
 				95B8080C283CF7A000D80481 /* Assets.xcassets */,
 				95B8080E283CF7A000D80481 /* Preview Content */,
@@ -180,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B80825283D487E00D80481 /* LoginVM.swift in Sources */,
-				95253A732860A40F00E5C7A0 /* NoteEditor.swift in Sources */,
+				95253A732860A40F00E5C7A0 /* NoteEditorView.swift in Sources */,
 				95B80823283D47F400D80481 /* LoginView.swift in Sources */,
 				95B8081C283D077A00D80481 /* MyNotesVM.swift in Sources */,
 				95B8080B283CF79F00D80481 /* MyNotesView.swift in Sources */,

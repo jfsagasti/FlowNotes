@@ -1,5 +1,5 @@
 //
-//  NoteEditor.swift
+//  NoteEditorView.swift
 //  FlowNotes
 //
 //  Created by Juan Sagasti on 20/6/22.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct NoteEditor: View {
+struct NoteEditorView: View {
     
     @EnvironmentObject private var vm: MyNotesVM
     @Environment(\.dismiss) private var dismiss
@@ -32,13 +32,18 @@ struct NoteEditor: View {
             VStack {
                 VStack {
                     TextField("Title", text: $noteTitle)
+                        .foregroundColor(.black)
+                        .font(.body.weight(.bold))
+                        .accentColor(.black)
                         .padding(.vertical, 7)
                     
                     TextField("Body", text: $noteBody)
+                        .foregroundColor(.black)
+                        .accentColor(.black)
                         .padding(.vertical, 7)
                 }
                 .padding(.horizontal)
-                .background(Color.yellow.opacity(0.5))
+                .background(UI.flowGreen.opacity(0.5))
                 .cornerRadius(10)
                 
                 Spacer()
@@ -48,11 +53,14 @@ struct NoteEditor: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: saveButton)
         }
+        .tint(UI.flowGreen)
     }
 }
 
 struct NoteEditor_Previews: PreviewProvider {
     static var previews: some View {
-        NoteEditor().environmentObject(MyNotesVM())
+        NoteEditorView()
+            .preferredColorScheme(.dark)
+            .environmentObject(MyNotesVM())
     }
 }

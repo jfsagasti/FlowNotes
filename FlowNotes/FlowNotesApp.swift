@@ -10,6 +10,10 @@ import Combine
 import FCL
 import SwiftUI
 
+enum UI {
+    static let flowGreen = Color(red: 0, green: 1, blue: 130/255)
+}
+
 @main
 struct FlowNotesApp: App {
     @State private var currentUser: User?
@@ -23,6 +27,10 @@ struct FlowNotesApp: App {
                    env: "testnet",
                    scope: "email",
                    authn: "https://flow-wallet-testnet.blocto.app/api/flow/authn")
+        
+        let flowGreenColor = UIColor(cgColor: UI.flowGreen.cgColor ?? UIColor.green.cgColor) // Color to UIColor conversion
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: flowGreenColor]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: flowGreenColor]
     }
     
     var body: some Scene {
@@ -34,6 +42,7 @@ struct FlowNotesApp: App {
                     LoginView()
                 }
             }
+            .preferredColorScheme(.dark)
             .onReceive(fcl.$currentUser) { user in
                 currentUser = user
             }

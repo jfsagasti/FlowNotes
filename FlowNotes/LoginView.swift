@@ -16,7 +16,9 @@ struct LoginView: View {
             Button {
                 vm.authenticate()
             } label: {
-                Text("Authenticate with your Blockto Wallet")
+                Text("Authenticate with\nyour Blocto Wallet")
+                    .font(.title)
+                    .foregroundColor(UI.flowGreen)
             }
         }
     }
@@ -25,5 +27,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .preferredColorScheme(.dark)
     }
 }
