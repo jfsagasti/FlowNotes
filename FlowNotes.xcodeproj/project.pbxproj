@@ -384,8 +384,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Outblock/fcl-swift";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = revision;
+				revision = b4a9cfaaa0003f3f250490e6ccdf8b75065199a3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
