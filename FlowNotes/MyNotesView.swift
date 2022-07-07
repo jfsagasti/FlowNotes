@@ -80,12 +80,12 @@ struct MyNotesView: View {
                                 vm.deleteNote(atIndex: index.first)
                             }
                         }
-                        .background(.red)
                     
                     } else if vm.state == .loading {
                         EmptyView()
                     } else {
-                        Text("Your notepad is empty.")
+                        Text("Your notepad is empty 🤓\nAdd a new note from\nthe'＋'button")
+                            .multilineTextAlignment(.center)
                             .font(.headline)
                             .foregroundColor(.gray)
                     }
