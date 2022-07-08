@@ -19,6 +19,7 @@ struct FlowNotesApp: App {
     @State private var currentUser: User?
     
     init() {
+        // FCL configuration with the Node URLs needed to stablish the connection with the blockchain and the Blocto Wallet:
         fcl.config(appName: "FlowNotes",
                    appIcon: "https://placekitten.com/g/200/200",
                    location: "https://foo.com",

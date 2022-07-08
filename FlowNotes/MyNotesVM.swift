@@ -50,6 +50,7 @@ final class MyNotesVM: ObservableObject {
         
         fcl.mutate {
             cadence {
+                // Transaction that checks if the Notepad exists (and creates it if needed) before creating and adding the note to it:
                  """
                  import NotepadManagerV1 from \(notepadManagerAddress)
                  
@@ -95,6 +96,7 @@ final class MyNotesVM: ObservableObject {
         
         fcl.mutate {
             cadence {
+                // Transaction that tries to delete the note if the Notepad exists:
                  """
                  import NotepadManagerV1 from \(notepadManagerAddress)
                  
@@ -133,6 +135,7 @@ final class MyNotesVM: ObservableObject {
         
         fcl.mutate {
             cadence {
+                // Transaction that deletes the entire Notepad:
                  """
                  import NotepadManagerV1 from \(notepadManagerAddress)
                  
@@ -172,21 +175,17 @@ final class MyNotesVM: ObservableObject {
         
         fcl.query {
             cadence {
+                // Script that tries to get all notes from the current Notepad.
+                // It returns nil in case the Notepad doesn't exist yet publicly:
                 """
                 import NotepadManagerV1 from \(notepadManagerAddress)
                 
                 pub fun main(): [NotepadManagerV1.NoteDTO]? {
-                    // Cadence code can get an account's public account object
-                    // by using the getAccount() built-in function.
                     let notepadAccount = getAccount(0x\(currentUserAddress))
                 
-                    // Get the public capability from the public path of the owner's account
                     let notepadCapability = notepadAccount.getCapability<&NotepadManagerV1.Notepad>(/public/PublicNotepadV1)
-                
-                    // borrow a reference for the capability
                     let notepadReference = notepadCapability.borrow()
                 
-                    // If the notepad doesn't exist yet publicly, we return nil
                     return notepadReference == nil ? nil : notepadReference?.allNotes()
                 }
                 """
@@ -211,7 +210,8 @@ final class MyNotesVM: ObservableObject {
             
             let notes: [Note] = valuesArray.compactMap {
                 guard let noteData = $0.value.toStruct()?.fields else { return nil }
-                // Not the best decoding code, but enough for what we are illustrating.
+                // It's not the best decoding code, but enough for what we are illustrating.
+                // The SDK maintainer is working on a better data decoder for future versions.
                 let id = noteData[0].value.value.toUInt64()
                 let title = noteData[1].value.value.toString()
                 let body = noteData[2].value.value.toString()
@@ -236,9 +236,11 @@ final class MyNotesVM: ObservableObject {
     // MARK: - Private
     
     private func waitForSealedTransaction(_ transactionId: String, onSuccess: @escaping () -> Void) {
-        // We are using a background thread because we don't want the .wait() to block the main event-loop:
+        // We are using a background thread because we don't want the .wait() to block the main event loop:
         DispatchQueue.global(qos: .userInitiated).async {
             do {
+                // We want to wait for the transaction to be sealed (last transaction state) because we need the final result to be available in the blockchain.
+                // It's slower, but we don't want intermediate transaction states where you can still get empty errors or data when querying the blockchain with a Script.
                 let result = try Flow.ID(hex: transactionId).onceSealed().wait()
                 
                 // And we update the state again in the main thread:
