@@ -5,7 +5,7 @@ https://user-images.githubusercontent.com/1671524/177764804-8fd3e06d-a34e-4406-8
 
 All the development process is documented in a series of 2 articles:
 1. [Web3 tutorial: A notepad in the Flow blockchain](https://dev.to/theagilemonkeys/web3-tutorial-a-notepad-in-the-flow-blockchain-5458)
-2. How to build a native iOS dApp that uses the Flow blockchain (coming soon)
+2. [How to build a native iOS dApp that uses the Flow blockchain as the backend](https://dev.to/theagilemonkeys/how-to-buid-a-native-ios-dapp-that-uses-the-flow-blockchain-as-the-backend-n9k)
 
 
 
